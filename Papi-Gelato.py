@@ -3,6 +3,11 @@ def SorryDatSnapIkNiet():
 
 print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.")
 
+Aardbei = 0
+Chocolade = 0
+Munt = 0
+Vanille = 0
+
 def Stap1():
     HoeveelBolletjes = int(input("Hoeveel bolletjes wilt u? "))
     if HoeveelBolletjes >= 1 and HoeveelBolletjes <=3:
@@ -16,6 +21,22 @@ def Stap1():
     else:
         SorryDatSnapIkNiet()
         Stap1()
+
+def Stap4(HoeveelBolletjes):
+    Aardbei = 0
+    Chocolade = 0
+    Munt = 0
+    Vanille = 0
+    for i in range(1,HoeveelBolletjes):
+        Smaken = input("Welke smaak wilt u voor bolletje nummer "+str(i)+" ? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?")
+        if Smaken == "A":
+            Aardbei += 1
+        elif Smaken == "C":
+            Chocolade += 1
+        elif Munt == "M":
+            Munt += 1
+        elif Smaken == "V":
+            Vanille += 1
 
 def Stap2(HoeveelBolletjes):
     if HoeveelBolletjes <= 3:
@@ -46,5 +67,6 @@ def Stap3(BakjeOfHoorntje,HoeveelBolletjes):
         Stap3()
 
 AanTalBolIs = Stap1()
+AanTalBolIs = Stap4(AanTalBolIs)
 BakjeOfHoorntje = Stap2(AanTalBolIs)
 Stap3(BakjeOfHoorntje,AanTalBolIs)
