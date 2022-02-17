@@ -1,7 +1,7 @@
 def SorryDatSnapIkNiet():
     print("Sorry dat begrijp ik niet, of we hebben die keuze niet.")
 
-print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.")
+print("Welkom bij Papi Gelato.")
 
 def Stap1():
     HoeveelBolletjes = int(input("Hoeveel bolletjes wilt u? "))
