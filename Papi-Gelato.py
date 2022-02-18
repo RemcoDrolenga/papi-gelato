@@ -2,6 +2,9 @@ def SorryDatSnapIkNiet():
     print("Sorry dat begrijp ik niet, of we hebben die keuze niet.")
 
 print("Welkom bij Papi Gelato.")
+TotaalBolletjes = 0
+Hoorntjes = 0 
+Bakjes = 0
 
 def Stap1():
     HoeveelBolletjes = int(input("Hoeveel bolletjes wilt u? "))
@@ -9,6 +12,8 @@ def Stap1():
         Stap2(HoeveelBolletjes)
     elif HoeveelBolletjes >= 4 and HoeveelBolletjes <= 8:
         print("Dan krijgt u van mij een bakje met",HoeveelBolletjes,"bolletjes.")
+        global Bakjes
+        Bakjes += 1
         Stap2(HoeveelBolletjes)
     elif HoeveelBolletjes >= 8:
         print("Sorry, zulke grote bakken hebben we niet.")
@@ -43,8 +48,12 @@ def Stap3(HoeveelBolletjes):
         if BakjeOfHoorntje == "A" or BakjeOfHoorntje == "B":
             if BakjeOfHoorntje == "A":
                BakjeOfHoorntje = "hoorntje"
+               global Hoorntjes
+               Hoorntjes += 1
             else:
                 BakjeOfHoorntje = "bakje"
+                global Bakjes
+                Bakjes += 1
             Stap4(BakjeOfHoorntje,HoeveelBolletjes)
         else:
             SorryDatSnapIkNiet()
@@ -55,12 +64,19 @@ def Stap3(HoeveelBolletjes):
 
 def Stap4(BakjeOfHoorntje,HoeveelBolletjes):
     NogMeer = input("Hier is uw "+BakjeOfHoorntje+" met "+str(HoeveelBolletjes)+" bolletje(s). Wilt u nog meer bestellen? (Y/N) ")
+    global TotaalBolletjes
+    TotaalBolletjes += HoeveelBolletjes
     if NogMeer == "Y" or NogMeer == "y":
         Stap1()
     elif NogMeer == "N" or NogMeer == "n":
         print("Bedankt en tot ziens!")
+        Stap5()
     else:
         SorryDatSnapIkNiet()
         Stap4()
+        
+def Stap5():
+    pass
+
 
 Stap1()
