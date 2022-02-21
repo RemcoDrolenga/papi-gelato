@@ -57,7 +57,7 @@ def Stap3(HoeveelBolletjes):
             Stap4(BakjeOfHoorntje,HoeveelBolletjes)
         else:
             SorryDatSnapIkNiet()
-            Stap3()
+            Stap3(HoeveelBolletjes)
     else:
         BakjeOfHoorntje = "bakje"
         Stap4(BakjeOfHoorntje,HoeveelBolletjes)
@@ -73,10 +73,34 @@ def Stap4(BakjeOfHoorntje,HoeveelBolletjes):
         Stap5()
     else:
         SorryDatSnapIkNiet()
-        Stap4()
+        Stap4(BakjeOfHoorntje,HoeveelBolletjes)
         
 def Stap5():
-    pass
-
+    PrijsBol = 1.10
+    PrijsHoorntje = 1.25
+    PrijsBakje = 0.75
+    PrijsBolletjes = "{:.2f}".format(PrijsBol)
+    PrijsHoorntjes = "{:.2f}".format(PrijsHoorntje)
+    PrijsBakjes = "{:.2f}".format(PrijsBakje)
+    TotaalPrijsBol = PrijsBol * TotaalBolletjes
+    TotaalPrijsHoorntje = PrijsHoorntje * Hoorntjes
+    TotaalPrijsBakje = PrijsBakje * Bakjes
+    TotaalPrijs = TotaalPrijsBol + TotaalPrijsHoorntje + TotaalPrijsBakje
+    TotaalPrijs2 = "{:.2f}".format(TotaalPrijs)
+    TotaalPrijsBolletjes = "{:.2f}".format(TotaalPrijsBol)
+    TotaalPrijsHoorntjes = "{:.2f}".format(TotaalPrijsHoorntje)
+    TotaalPrijsBakjes = "{:.2f}".format(TotaalPrijsBakje)
+    print('---------["Papi Gelato"]---------')
+    print("                                 ")
+    if TotaalBolletjes > 0:
+        print("Bolletjes     ",str(TotaalBolletjes),"x €"+str(PrijsBolletjes),"  = €"+str(TotaalPrijsBolletjes))
+    if Hoorntjes > 0:
+        print("Hoorntjes     ",str(Hoorntjes),"x €"+str(PrijsHoorntjes),"  = €"+str(TotaalPrijsHoorntjes))
+    if Bakjes > 0:
+        print("Bakje         ",str(Bakjes),"x €"+str(PrijsBakjes),"  = €"+str(TotaalPrijsBakjes))
+    print("                           --------+")
+    print("Totaal                     = €"+str(TotaalPrijs2))
+    print("                                 ")
+    print('---------["Papi Gelato"]---------')
 
 Stap1()
