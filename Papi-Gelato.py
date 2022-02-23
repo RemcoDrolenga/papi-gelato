@@ -62,6 +62,21 @@ def Stap3(HoeveelBolletjes):
         BakjeOfHoorntje = "bakje"
         Stap4(BakjeOfHoorntje,HoeveelBolletjes)
 
+# def Stap4(BakjeOfHoorntje,HoeveelBolletjes):
+#     GeenSmaak = 0
+#     Slagroom = 0
+#     Sprinkels = 0
+#     CaramelSause = 0
+#     Toppings = input("Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus?").upper()
+#     if Toppings == "A":
+#             GeenSmaak += 1
+#     elif Toppings == "C":
+#             Slagroom += 1
+#     elif Toppings == "M":
+#             Sprinkels += 1
+#     elif Toppings == "V":
+#             CaramelSause += 1
+
 def Stap4(BakjeOfHoorntje,HoeveelBolletjes):
     NogMeer = input("Hier is uw "+BakjeOfHoorntje+" met "+str(HoeveelBolletjes)+" bolletje(s). Wilt u nog meer bestellen? (Y/N) ")
     global TotaalBolletjes
@@ -73,8 +88,9 @@ def Stap4(BakjeOfHoorntje,HoeveelBolletjes):
         Stap5()
     else:
         SorryDatSnapIkNiet()
-        Stap4(BakjeOfHoorntje,HoeveelBolletjes)
-        
+        Stap4()
+        # Stap5(BakjeOfHoorntje,HoeveelBolletjes)
+
 def Stap5():
     PrijsBol = 1.10
     PrijsHoorntje = 1.25
