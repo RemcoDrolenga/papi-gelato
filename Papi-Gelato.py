@@ -63,19 +63,36 @@ def Stap3(HoeveelBolletjes):
         Stap4(BakjeOfHoorntje,HoeveelBolletjes)
 
 def Stap4(BakjeOfHoorntje,HoeveelBolletjes):
-    GeenSmaak = 0
+    GeenTopping = 0
     Slagroom = 0
     Sprinkels = 0
     CaramelSause = 0
-    Toppings = input("Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus?").upper()
+    PrijsSlagroom = 0.50
+    PrijsSprinkels = 0.30
+    PrijsToppings = 0
+    if Bakjes >= 0:
+        PrijsCaramelSause = 0.90
+    else:
+        PrijsCaramelSause = 0.60
+    Toppings = input("Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus? ").upper()
     if Toppings == "A":
-            GeenSmaak += 1
+            GeenTopping += 1
     elif Toppings == "C":
             Slagroom += 1
     elif Toppings == "M":
             Sprinkels += 1
     elif Toppings == "V":
             CaramelSause += 1
+    TPrijsSlagroom = Slagroom * PrijsSlagroom
+    TPrijsSPrinkels = Sprinkels * PrijsSprinkels
+    TPrijsCaramelSause = CaramelSause * PrijsCaramelSause
+    if GeenTopping >= 0:
+        PrijsToppings == 0
+    else:
+        PrijsToppings == TPrijsCaramelSause + TPrijsSlagroom + TPrijsSPrinkels
+    global PrijsTopping
+    PrijsTopping = "{:.2f}".format(PrijsToppings)
+    Stap5(BakjeOfHoorntje,HoeveelBolletjes)
 
 def Stap5(BakjeOfHoorntje,HoeveelBolletjes):
     NogMeer = input("Hier is uw "+BakjeOfHoorntje+" met "+str(HoeveelBolletjes)+" bolletje(s). Wilt u nog meer bestellen? (Y/N) ")
@@ -113,6 +130,8 @@ def Stap6():
         print("Hoorntjes     ",str(Hoorntjes),"x €"+str(PrijsHoorntjes),"  = €"+str(TotaalPrijsHoorntjes))
     if Bakjes > 0:
         print("Bakje         ",str(Bakjes),"x €"+str(PrijsBakjes),"  = €"+str(TotaalPrijsBakjes))
+    if str(PrijsTopping) > 0:
+        print("Toppings      ",1,"x €"+str(PrijsTopping)," = €"+str(PrijsTopping))
     print("                           --------+")
     print("Totaal                     = €"+str(TotaalPrijs2))
     print("                                 ")
