@@ -63,35 +63,26 @@ def Stap3(HoeveelBolletjes):
         Stap4(BakjeOfHoorntje,HoeveelBolletjes)
 
 def Stap4(BakjeOfHoorntje,HoeveelBolletjes):
+    global GeenTopping
+    global Slagroom
+    global Sprinkels
+    global CaramelSause
     GeenTopping = 0
     Slagroom = 0
     Sprinkels = 0
     CaramelSause = 0
-    PrijsSlagroom = 0.50
-    PrijsSprinkels = 0.30
-    PrijsToppings = 0
-    if Bakjes >= 0:
-        PrijsCaramelSause = 0.90
-    else:
-        PrijsCaramelSause = 0.60
     Toppings = input("Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus? ").upper()
     if Toppings == "A":
             GeenTopping += 1
-    elif Toppings == "C":
+    elif Toppings == "B":
             Slagroom += 1
-    elif Toppings == "M":
+    elif Toppings == "C":
             Sprinkels += 1
-    elif Toppings == "V":
+    elif Toppings == "D":
             CaramelSause += 1
-    TPrijsSlagroom = Slagroom * PrijsSlagroom
-    TPrijsSPrinkels = Sprinkels * PrijsSprinkels
-    TPrijsCaramelSause = CaramelSause * PrijsCaramelSause
-    if GeenTopping >= 0:
-        PrijsToppings == 0
     else:
-        PrijsToppings == TPrijsCaramelSause + TPrijsSlagroom + TPrijsSPrinkels
-    global PrijsTopping
-    PrijsTopping = "{:.2f}".format(PrijsToppings)
+        SorryDatSnapIkNiet()
+        Stap4(BakjeOfHoorntje,HoeveelBolletjes)
     Stap5(BakjeOfHoorntje,HoeveelBolletjes)
 
 def Stap5(BakjeOfHoorntje,HoeveelBolletjes):
@@ -111,17 +102,35 @@ def Stap6():
     PrijsBol = 1.10
     PrijsHoorntje = 1.25
     PrijsBakje = 0.75
+    
+    PrijsSlagroom = 0.50
+    PrijsSprinkels = 0.30
+    if Bakjes > 0:
+        PrijsCaramelSause = 0.90
+    else:
+        PrijsCaramelSause = 0.60
+    PrijsToppings = 0
+    TPrijsSlagroom = Slagroom * PrijsSlagroom
+    TPrijsSprinkels = Sprinkels * PrijsSprinkels
+    TPrijsCaramelSause = CaramelSause * PrijsCaramelSause
+    if GeenTopping >= 1:
+        PrijsToppings == 0
+    else:
+        PrijsToppings = TPrijsCaramelSause + TPrijsSlagroom + TPrijsSprinkels
+
     PrijsBolletjes = "{:.2f}".format(PrijsBol)
     PrijsHoorntjes = "{:.2f}".format(PrijsHoorntje)
     PrijsBakjes = "{:.2f}".format(PrijsBakje)
     TotaalPrijsBol = PrijsBol * TotaalBolletjes
     TotaalPrijsHoorntje = PrijsHoorntje * Hoorntjes
     TotaalPrijsBakje = PrijsBakje * Bakjes
-    TotaalPrijs = TotaalPrijsBol + TotaalPrijsHoorntje + TotaalPrijsBakje
+    TotaalPrijs = TotaalPrijsBol + TotaalPrijsHoorntje + TotaalPrijsBakje + PrijsToppings
     TotaalPrijs2 = "{:.2f}".format(TotaalPrijs)
     TotaalPrijsBolletjes = "{:.2f}".format(TotaalPrijsBol)
     TotaalPrijsHoorntjes = "{:.2f}".format(TotaalPrijsHoorntje)
     TotaalPrijsBakjes = "{:.2f}".format(TotaalPrijsBakje)
+    PrijsTopping = "{:.2f}".format(PrijsToppings)
+
     print('---------["Papi Gelato"]---------')
     print("                                 ")
     if TotaalBolletjes > 0:
@@ -130,11 +139,11 @@ def Stap6():
         print("Hoorntjes     ",str(Hoorntjes),"x €"+str(PrijsHoorntjes),"  = €"+str(TotaalPrijsHoorntjes))
     if Bakjes > 0:
         print("Bakje         ",str(Bakjes),"x €"+str(PrijsBakjes),"  = €"+str(TotaalPrijsBakjes))
-    if str(PrijsTopping) > 0:
-        print("Toppings      ",1,"x €"+str(PrijsTopping)," = €"+str(PrijsTopping))
+    if float(PrijsTopping) > 0:
+        print("Toppings      ",1,"x €"+str(PrijsTopping),"  = €"+str(PrijsTopping))
     print("                           --------+")
     print("Totaal                     = €"+str(TotaalPrijs2))
     print("                                 ")
     print('---------["Papi Gelato"]---------')
-
+     
 Stap1()
