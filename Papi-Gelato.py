@@ -147,7 +147,7 @@ def Stap5(BakjeOfHoorntje,HoeveelBolletjes):
         Stap5(BakjeOfHoorntje,HoeveelBolletjes)
 
 def Stap6():
-    PrijsBol = 1.10
+    PrijsBol = 0.95
     PrijsHoorntje = 1.25
     PrijsBakje = 0.75
     PrijsSlagroom = 0.50
