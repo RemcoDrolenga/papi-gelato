@@ -1,5 +1,5 @@
 def SorryDatSnapIkNiet():
-    print("Sorry dat begrijp ik niet, of we hebben die keuze niet.")
+    print("Sorry dat is geen optie die we aanbieden.")
 
 print("Welkom bij Papi Gelato.")
 TotaalBolletjes = 0
