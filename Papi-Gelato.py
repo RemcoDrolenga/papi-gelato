@@ -40,8 +40,9 @@ def AantalLZakelijk():
 
 def ZakelijkBonnetje():
     Liter = 9.80
+    BTWprocent = 6
     TotaalPrijs = Liter * HoeveelLiters
-    BTW = TotaalPrijs / 100 * 9
+    BTW = TotaalPrijs / 100 * BTWprocent
     Liter2 = "{:.2f}".format(Liter)
     TotaalPrijs2 = "{:.2f}".format(TotaalPrijs)
     BTW2 = "{:.2f}".format(BTW)
