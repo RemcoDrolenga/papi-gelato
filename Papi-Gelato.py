@@ -6,6 +6,19 @@ TotaalBolletjes = 0
 Hoorntjes = 0 
 Bakjes = 0
 
+def ZakelijkParticulier():
+    ZakelijkOfParticulier = input("Bent u 1) particulier of 2) zakelijk? ")
+    if ZakelijkOfParticulier == "1":
+        Stap1()
+    elif ZakelijkOfParticulier == "2":
+        AantalLZakelijk()
+    else:
+        SorryDatSnapIkNiet()
+        ZakelijkParticulier()
+
+def AantalLZakelijk():
+    HoeveelLiters = input("Hoeveel liter zou u willen bestellen? ")
+
 def Stap1():
     HoeveelBolletjes = int(input("Hoeveel bolletjes wilt u? "))
     if HoeveelBolletjes >= 1 and HoeveelBolletjes <=3:
@@ -102,7 +115,6 @@ def Stap6():
     PrijsBol = 1.10
     PrijsHoorntje = 1.25
     PrijsBakje = 0.75
-    
     PrijsSlagroom = 0.50
     PrijsSprinkels = 0.30
     if Bakjes > 0:
@@ -117,7 +129,6 @@ def Stap6():
         PrijsToppings == 0
     else:
         PrijsToppings = TPrijsCaramelSause + TPrijsSlagroom + TPrijsSprinkels
-
     PrijsBolletjes = "{:.2f}".format(PrijsBol)
     PrijsHoorntjes = "{:.2f}".format(PrijsHoorntje)
     PrijsBakjes = "{:.2f}".format(PrijsBakje)
