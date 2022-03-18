@@ -17,7 +17,42 @@ def ZakelijkParticulier():
         ZakelijkParticulier()
 
 def AantalLZakelijk():
-    HoeveelLiters = input("Hoeveel liter zou u willen bestellen? ")
+    Aardbei = 0
+    Chocolade = 0
+    Munt = 0
+    Vanille = 0
+    global HoeveelLiters
+    HoeveelLiters = int(input("Hoeveel liter zou u willen bestellen? "))
+    for i in range(1,HoeveelLiters+1):
+        Smaken = input("Welke smaak wilt u voor liter nummer "+str(i)+" ? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ").upper()
+        if Smaken == "A":
+            Aardbei += 1
+        elif Smaken == "C":
+            Chocolade += 1
+        elif Smaken == "M":
+            Munt += 1
+        elif Smaken == "V":
+            Vanille += 1
+        else:
+            SorryDatSnapIkNiet()
+            AantalLZakelijk()
+    ZakelijkBonnetje()
+
+def ZakelijkBonnetje():
+    Liter = 9.80
+    TotaalPrijs = Liter * HoeveelLiters
+    BTW = TotaalPrijs / 100 * 9
+    Liter2 = "{:.2f}".format(Liter)
+    TotaalPrijs2 = "{:.2f}".format(TotaalPrijs)
+    BTW2 = "{:.2f}".format(BTW)
+    print('---------["Papi Gelato"]---------')
+    print("                                 ")
+    print(" Liter        ",HoeveelLiters,"x €"+Liter2,"  = €"+TotaalPrijs2)
+    print("                           --------+")
+    print(" Totaal                    = €"+TotaalPrijs2)
+    print(" BTW (9%)                  = €"+BTW2)
+    print("                                 ")
+    print('---------["Papi Gelato"]---------')
 
 def Stap1():
     HoeveelBolletjes = int(input("Hoeveel bolletjes wilt u? "))
@@ -157,4 +192,4 @@ def Stap6():
     print("                                 ")
     print('---------["Papi Gelato"]---------')
      
-Stap1()
+ZakelijkParticulier()
