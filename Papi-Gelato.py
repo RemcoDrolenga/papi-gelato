@@ -76,13 +76,11 @@ def Stap2(HoeveelBolletjes):
     Munt = 0
     Vanille = 0
     for i in range(1,HoeveelBolletjes+1):
-        Smaken = input("Welke smaak wilt u voor bolletje nummer "+str(i)+" ? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ").upper()
+        Smaken = input("Welke smaak wilt u voor bolletje nummer "+str(i)+" ? A) Aardbei, C) Chocolade of V) Vanille? ").upper()
         if Smaken == "A":
             Aardbei += 1
         elif Smaken == "C":
             Chocolade += 1
-        elif Smaken == "M":
-            Munt += 1
         elif Smaken == "V":
             Vanille += 1
         else:
